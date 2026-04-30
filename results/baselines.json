@@ -1,0 +1,78 @@
+{
+  "baselines": {
+    "B1_Lifecycle_OnPrem": {
+      "Q1": 152276.00779380722,
+      "Q2": 4393545.685475199,
+      "Q3": 1994.4374642023713,
+      "distribution": {
+        "Toronto-OnPrem-SSD-Hot": 92,
+        "Toronto-OnPrem-HDD-Warm": 46,
+        "Toronto-OnPrem-Tape-Cold": 46,
+        "AWS-Canada-Standard": 0,
+        "AWS-Canada-IA": 0,
+        "AWS-Canada-GlacierIR": 0,
+        "AWS-Canada-DeepArch": 0,
+        "Azure-Canada-Hot": 0,
+        "Azure-Canada-Cool": 0,
+        "Azure-Canada-Cold": 0,
+        "Azure-Canada-Archive": 0,
+        "GCP-Canada-Standard": 0,
+        "GCP-Canada-Nearline": 0,
+        "GCP-Canada-Coldline": 0,
+        "GCP-Canada-Archive": 0,
+        "AWS-US-DeepArch": 0
+      }
+    },
+    "B2_Mono_Cost": {
+      "Q1": 35526.350811270175,
+      "Q2": 418111728.908954,
+      "Q3": 2760.393750637024,
+      "distribution": {
+        "Toronto-OnPrem-SSD-Hot": 0,
+        "Toronto-OnPrem-HDD-Warm": 46,
+        "Toronto-OnPrem-Tape-Cold": 80,
+        "AWS-Canada-Standard": 0,
+        "AWS-Canada-IA": 0,
+        "AWS-Canada-GlacierIR": 0,
+        "AWS-Canada-DeepArch": 0,
+        "Azure-Canada-Hot": 0,
+        "Azure-Canada-Cool": 0,
+        "Azure-Canada-Cold": 0,
+        "Azure-Canada-Archive": 58,
+        "GCP-Canada-Standard": 0,
+        "GCP-Canada-Nearline": 0,
+        "GCP-Canada-Coldline": 0,
+        "GCP-Canada-Archive": 0,
+        "AWS-US-DeepArch": 0
+      }
+    },
+    "B3_All_SSD_Hot": {
+      "Q1": 948713.4784988698,
+      "Q2": 8005.681918712408,
+      "Q3": 25465.051711011274,
+      "distribution": {
+        "Toronto-OnPrem-SSD-Hot": 184,
+        "Toronto-OnPrem-HDD-Warm": 0,
+        "Toronto-OnPrem-Tape-Cold": 0,
+        "AWS-Canada-Standard": 0,
+        "AWS-Canada-IA": 0,
+        "AWS-Canada-GlacierIR": 0,
+        "AWS-Canada-DeepArch": 0,
+        "Azure-Canada-Hot": 0,
+        "Azure-Canada-Cool": 0,
+        "Azure-Canada-Cold": 0,
+        "Azure-Canada-Archive": 0,
+        "GCP-Canada-Standard": 0,
+        "GCP-Canada-Nearline": 0,
+        "GCP-Canada-Coldline": 0,
+        "GCP-Canada-Archive": 0,
+        "AWS-US-DeepArch": 0
+      }
+    }
+  },
+  "validations": {
+    "no_dominance": true,
+    "no_dominance_msg": null,
+    "b2_matches_lex_q1": true
+  }
+}

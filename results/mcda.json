@@ -1,0 +1,131 @@
+{
+  "pareto_n": 241,
+  "profiles": {
+    "P1_Well_Run_City": [
+      0.6,
+      0.25,
+      0.15
+    ],
+    "P2_Service_Delivery": [
+      0.2,
+      0.6,
+      0.2
+    ],
+    "P3_Equity_Inclusion": [
+      0.3,
+      0.5,
+      0.2
+    ],
+    "P4_Climate_Officer": [
+      0.2,
+      0.2,
+      0.6
+    ]
+  },
+  "results": {
+    "P1_Well_Run_City": {
+      "weights": [
+        0.6,
+        0.25,
+        0.15
+      ],
+      "topsis_top1_idx": 88,
+      "topsis_top1_Q": {
+        "Q1": 37473.026567010675,
+        "Q2": 110030149.1493778,
+        "Q3": 2753.8259361980977
+      },
+      "vikor_compromise_set": [
+        88,
+        89,
+        90,
+        87
+      ],
+      "vikor_c1_pass": false,
+      "vikor_c2_pass": false,
+      "vikor_pick_idx": 90,
+      "vikor_pick_Q": {
+        "Q1": 37473.02031207879,
+        "Q2": 110030294.0978219,
+        "Q3": 2753.826226383948
+      },
+      "topsis_in_compromise_set": true
+    },
+    "P2_Service_Delivery": {
+      "weights": [
+        0.2,
+        0.6,
+        0.2
+      ],
+      "topsis_top1_idx": 0,
+      "topsis_top1_Q": {
+        "Q1": 196821.69852811695,
+        "Q2": 1601.1363837424828,
+        "Q3": 3329.697165584871
+      },
+      "vikor_compromise_set": [
+        0
+      ],
+      "vikor_c1_pass": true,
+      "vikor_c2_pass": true,
+      "vikor_pick_idx": 0,
+      "vikor_pick_Q": {
+        "Q1": 196821.69852811695,
+        "Q2": 1601.1363837424828,
+        "Q3": 3329.697165584871
+      },
+      "topsis_in_compromise_set": true
+    },
+    "P3_Equity_Inclusion": {
+      "weights": [
+        0.3,
+        0.5,
+        0.2
+      ],
+      "topsis_top1_idx": 0,
+      "topsis_top1_Q": {
+        "Q1": 196821.69852811695,
+        "Q2": 1601.1363837424828,
+        "Q3": 3329.697165584871
+      },
+      "vikor_compromise_set": [
+        0
+      ],
+      "vikor_c1_pass": true,
+      "vikor_c2_pass": true,
+      "vikor_pick_idx": 0,
+      "vikor_pick_Q": {
+        "Q1": 196821.69852811695,
+        "Q2": 1601.1363837424828,
+        "Q3": 3329.697165584871
+      },
+      "topsis_in_compromise_set": true
+    },
+    "P4_Climate_Officer": {
+      "weights": [
+        0.2,
+        0.2,
+        0.6
+      ],
+      "topsis_top1_idx": 53,
+      "topsis_top1_Q": {
+        "Q1": 66405.18414729171,
+        "Q2": 88024591.43101217,
+        "Q3": 461.57151650366046
+      },
+      "vikor_compromise_set": [
+        53,
+        73
+      ],
+      "vikor_c1_pass": false,
+      "vikor_c2_pass": true,
+      "vikor_pick_idx": 73,
+      "vikor_pick_Q": {
+        "Q1": 62328.92474121504,
+        "Q2": 110020733.62715593,
+        "Q3": 461.61208694113014
+      },
+      "topsis_in_compromise_set": true
+    }
+  }
+}

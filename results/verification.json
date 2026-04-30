@@ -1,0 +1,15 @@
+{
+  "sample_roles": [
+    "Toronto_Police_Services__op_live",
+    "Toronto_Public_Library__op_recent",
+    "Lobbyist_Registrar__op_archive",
+    "Transportation_Services__open"
+  ],
+  "cells_total": 64,
+  "max_relative_diff": {
+    "Q1": 0.0,
+    "Q2": 0.0,
+    "Q3": 0.0
+  },
+  "machine_precision_pass": true
+}
