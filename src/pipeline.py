@@ -1,4 +1,4 @@
-from . import instance, verify, pareto, mcda, baselines, sensitivity, plot
+from . import instance, verify, pareto, mcda, baselines, sensitivity
 
 
 def main(k=40, run_sensitivity=True):
@@ -25,13 +25,10 @@ def main(k=40, run_sensitivity=True):
     else:
         sn = None
 
-    print('stage=plot')
-    fig = plot.render(pareto_file=plot.RESULTS_DIR / f'pareto_k{k}.json')
-
     n_open = sum(1 for v in inst['role_details'].values() if v['class_label'] == 'open')
     n_op = sum(1 for v in inst['role_details'].values() if v['class_label'] == 'operational')
     print(f'roles open={n_open} operational={n_op} pareto_nd={par["pareto_nd_count"]} '
-          f'mcda_agreement={mc["agreement_count"]}/4 figure={fig.name}')
+          f'mcda_agreement={mc["agreement_count"]}/4')
 
 
 if __name__ == '__main__':

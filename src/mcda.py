@@ -108,10 +108,14 @@ def run(pareto_file=None, write=True):
         pareto_file = RESULTS_DIR / 'pareto_k20.json'
     data = json.loads(Path(pareto_file).read_text(encoding='utf-8'))
     pareto = data['pareto_front']
+    results = evaluate_profiles(pareto)
+    agreement_count = sum(1 for r in results.values() if r['topsis_in_compromise_set'])
     result = {
         'pareto_n': len(pareto),
         'profiles': PROFILES,
-        'results': evaluate_profiles(pareto),
+        'results': results,
+        'agreement_count': agreement_count,
+        'agreement_pct': 100.0 * agreement_count / max(len(results), 1),
     }
     if write:
         path = RESULTS_DIR / 'mcda.json'
