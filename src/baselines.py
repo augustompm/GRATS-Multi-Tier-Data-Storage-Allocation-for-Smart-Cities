@@ -1,5 +1,3 @@
-"""B1 lifecycle on-premises, B2 mono-cost ILP, B3 all SSD-Hot."""
-
 import json
 from pathlib import Path
 

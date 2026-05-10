@@ -1,5 +1,3 @@
-"""TOPSIS and canonical VIKOR (Opricovic 2004) with C1/C2 acceptance and Q1 tiebreaker."""
-
 import json
 import math
 from pathlib import Path

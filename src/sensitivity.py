@@ -1,5 +1,3 @@
-"""Sensitivity sweep over alpha, beta, C4 caps, TPS anchor, intensity scale."""
-
 import copy
 import json
 import time

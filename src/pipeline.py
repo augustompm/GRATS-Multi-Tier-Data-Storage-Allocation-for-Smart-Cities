@@ -1,9 +1,7 @@
-"""End-to-end orchestration: instance, verification, Pareto, MCDA, baselines, sensitivity, figure."""
-
 from . import instance, verify, pareto, mcda, baselines, sensitivity, plot
 
 
-def main(k=20, run_sensitivity=True):
+def main(k=40, run_sensitivity=True):
     print('stage=instance')
     inst = instance.build_instance(write=True)
 
@@ -32,13 +30,14 @@ def main(k=20, run_sensitivity=True):
 
     n_open = sum(1 for v in inst['role_details'].values() if v['class_label'] == 'open')
     n_op = sum(1 for v in inst['role_details'].values() if v['class_label'] == 'operational')
-    print(f'roles open={n_open} operational={n_op} pareto_nd={par["pareto_nd_count"]} figure={fig.name}')
+    print(f'roles open={n_open} operational={n_op} pareto_nd={par["pareto_nd_count"]} '
+          f'mcda_agreement={mc["agreement_count"]}/4 figure={fig.name}')
 
 
 if __name__ == '__main__':
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument('--k', type=int, default=20)
+    ap.add_argument('--k', type=int, default=40)
     ap.add_argument('--no-sensitivity', action='store_true')
     args = ap.parse_args()
     main(k=args.k, run_sensitivity=not args.no_sensitivity)

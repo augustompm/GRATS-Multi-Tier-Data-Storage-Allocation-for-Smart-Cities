@@ -1,7 +1,6 @@
-"""Exact Pareto frontier via epsilon-constraint with AUGMECON in CBC."""
-
 import argparse
 import json
+import math
 import time
 from pathlib import Path
 
@@ -106,7 +105,15 @@ def find_extremes(roles, role_keys):
     return {p: lex_extreme(roles, role_keys, p, s, t) for p, s, t in plan}
 
 
-def epsilon_grid(roles, role_keys, ext, k=20):
+def log_levels(lo, hi, k):
+    if k <= 1:
+        return [hi]
+    a = math.log10(max(lo, 1e-12))
+    b = math.log10(hi)
+    return [10 ** (a + (b - a) * i / (k - 1)) for i in range(k)]
+
+
+def epsilon_grid(roles, role_keys, ext, k=40):
     Q1mn = ext['Q1']['Q1']; Q1mx = max(ext['Q2']['Q1'], ext['Q3']['Q1'])
     Q2mn = ext['Q2']['Q2']; Q2mx = max(ext['Q1']['Q2'], ext['Q3']['Q2'])
     Q3mn = ext['Q3']['Q3']; Q3mx = max(ext['Q1']['Q3'], ext['Q2']['Q3'])
@@ -114,11 +121,12 @@ def epsilon_grid(roles, role_keys, ext, k=20):
            'Q2': max(Q2mx - Q2mn, 1e-9),
            'Q3': max(Q3mx - Q3mn, 1e-9)}
 
+    eps2_levels = log_levels(Q2mn, Q2mx, k)
+    eps3_levels = log_levels(Q3mn, Q3mx, k)
+
     raw = []
-    for k2 in range(k):
-        for k3 in range(k):
-            eps2 = Q2mn + (Q2mx - Q2mn) * k2 / (k - 1) if k > 1 else Q2mx
-            eps3 = Q3mn + (Q3mx - Q3mn) * k3 / (k - 1) if k > 1 else Q3mx
+    for eps2 in eps2_levels:
+        for eps3 in eps3_levels:
             sol = solve(roles, role_keys, eps2=eps2, eps3=eps3, primary='Q1', augmecon=True, ranges=rng)
             if sol is not None:
                 sol['eps2'] = eps2
@@ -149,7 +157,7 @@ def filter_pareto(raw, dedup_decimals=2):
     return nd, len(deduped)
 
 
-def compute(instance, k=20, write=True):
+def compute(instance, k=40, write=True):
     roles = instance['role_details']
     role_keys = instance['role_keys']
     t0 = time.perf_counter()
@@ -181,7 +189,7 @@ def compute(instance, k=20, write=True):
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('--k', type=int, default=20)
+    ap.add_argument('--k', type=int, default=40)
     args = ap.parse_args()
     instance = json.loads((RESULTS_DIR / 'instance_toronto.json').read_text(encoding='utf-8'))
     out = compute(instance, k=args.k)

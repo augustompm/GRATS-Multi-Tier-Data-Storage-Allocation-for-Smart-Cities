@@ -1,5 +1,3 @@
-"""Build the Toronto canonical instance: 184 roles from CKAN catalog plus budget-scaled volumes."""
-
 import json
 from collections import Counter, defaultdict
 from pathlib import Path

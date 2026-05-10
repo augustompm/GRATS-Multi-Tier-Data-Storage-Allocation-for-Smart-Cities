@@ -1,5 +1,3 @@
-"""Cell-by-cell verification of Q1, Q2, Q3 against a step-by-step manual computation."""
-
 import json
 from pathlib import Path
 

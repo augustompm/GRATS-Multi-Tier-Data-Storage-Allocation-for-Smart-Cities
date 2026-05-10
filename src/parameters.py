@@ -1,5 +1,3 @@
-"""Physical parameters for GRATS: 16 agents, PUE, grid CO2, media energy, embodied carbon."""
-
 AGENTS = {
     'Toronto-OnPrem-SSD-Hot':   {'price': 0.10,    'retrieval': 0.00,   'transfer_override': 0.00, 'media': 'SSD',  'latency_s': 0.005,    'provider': 'Toronto-OnPrem', 'region_grid': 'IESO_ON'},
     'Toronto-OnPrem-HDD-Warm':  {'price': 0.04,    'retrieval': 0.00,   'transfer_override': 0.00, 'media': 'HDD',  'latency_s': 0.020,    'provider': 'Toronto-OnPrem', 'region_grid': 'IESO_ON'},

@@ -1,5 +1,3 @@
-"""Q1 cost, Q2 volume-weighted latency, Q3 amortized CO2 per (agent, role) cell."""
-
 from .parameters import AGENTS, TRANSFER_OUT, co2_op_per_gb_month, co2_emb_per_gb_month
 
 
